@@ -9,23 +9,23 @@ class ContactForm extends Component{
      nameInputId=shortid.generate();
      numberInputId=shortid.generate();
 
-     handleChange=event=>{
+    handleChange=event=>{
        const {name, value}= event.currentTarget;
        this.setState({id: shortid.generate(),[name]: value})
-   };
+    };
   
-   handleSubmit=event=>{
+    handleSubmit=event=>{
      event.preventDefault();
      this.props.onSubmit(this.state);
      this.reset();
-   };
+    };
 
-   reset = () => {
-    this.setState({ name: '', number: '' });
-  };
+    reset = () => {
+      this.setState({ name: '', number: '' });
+    };
     render(){
-                return(
-                <form  className={styles.form} onSubmit={this.handleSubmit}>
+        return(
+        <form  className={styles.form} onSubmit={this.handleSubmit}>
         <label className={styles.formLabel} htmlFor={this.nameInputId}>Name
         <input className={styles.formInput}
         type="text"
@@ -56,6 +56,4 @@ class ContactForm extends Component{
         )
     }
 }
-
-
 export default ContactForm;
